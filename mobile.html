@@ -1,0 +1,17 @@
+<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+<body style='margin : 0px; overflow: hidden;'>
+<a-scene embedded arjs>
+    <a-assets>
+        <img id="platform" src="https://raw.githubusercontent.com/lump1k/arjs/master/images/pyramid.jpg">
+    </a-assets>
+    <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/lump1k/arjs/master/markers/3.patt">
+        <!-- Textured triangle parallel to ground. -->
+        <a-triangle src="#platform" rotation="-90 0 0"></a-triangle>
+    </a-marker>
+    <a-entity camera></a-entity>
+</a-scene>
+</body>
+</html>
