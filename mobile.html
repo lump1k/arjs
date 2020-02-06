@@ -2,33 +2,31 @@
 <html>
 <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
 <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+<script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
 <a-scene embedded arjs>
     <a-assets>
         <img id="pyramid" src="https://raw.githubusercontent.com/lump1k/arjs/master/images/pyramid.jpg">
     </a-assets>
-    <a-assets>
-        <img id="ffflabel" src="https://raw.githubusercontent.com/lump1k/arjs/master/images/galley.jpg">
-    </a-assets>
-
 
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/lump1k/arjs/master/markers/3.patt">
         <!-- Textured triangle parallel to ground. -->
         <a-triangle src="#pyramid" rotation="-90 0 0"></a-triangle>
     </a-marker>
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/lump1k/arjs/master/markers/box.patt">
-        <a-box color="tomato" depth="2" height="0.5" width="0.5"></a-box>
+        <a-box color="tomato"></a-box>
     </a-marker>
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/lump1k/arjs/master/markers/ffflabel.patt">
-        <a-box src="#ffflabel" rotation="-90 0 0"></a-box>
+        <a-entity geometry="primitive:box" material="shader:gif;src:url(https://raw.githubusercontent.com/lump1k/arjs/master/images/galley.gif);" gif=""></a-entity>
     </a-marker>
 
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/lump1k/arjs/master/markers/fish.patt">
-        <a-gltf-model src="https://raw.githubusercontent.com/lump1k/arjs/master/3d/fish/scene.gltf"  rotation="-90 0 0"></a-gltf-model>
+        <a-gltf-model src="https://raw.githubusercontent.com/lump1k/arjs/master/3d/fish/scene.gltf"  rotation="-90 0 0" scale="0.5 0.5 0.5"></a-gltf-model>
     </a-marker>
 
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/lump1k/arjs/master/markers/cookie.patt">
-        <a-gltf-model src="https://raw.githubusercontent.com/lump1k/arjs/master/3d/cookie/scene.gltf"  rotation="-90 0 0"></a-gltf-model>
+        <a-gltf-model src="https://raw.githubusercontent.com/lump1k/arjs/master/3d/cookie/scene.gltf" rotation="-70 0 0" scale="0.005 0.005 0.005"></a-gltf-model>
     </a-marker>
 
     <a-entity camera></a-entity>
